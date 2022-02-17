@@ -36,7 +36,7 @@ weatherForm.addEventListener('submit', (event) => {
                 weatherCondition.textContent = "";
             } else {
                 locationElement.textContent ='City: ' + data.cityName;
-                tempElement.textContent = (data.temperature - 273.5).toFixed(2) + String.fromCharCode(176);
+                tempElement.textContent = (data.temperature - 273.5).toFixed(2) + String.fromCharCode(176) + 'C';
                 weatherCondition.textContent = 'Weather Condition: ' + data.description;
                 humidityElement.textContent = 'Humidity: ' + data.humidity;
                 weatherForm.reset();
