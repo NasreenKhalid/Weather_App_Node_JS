@@ -17,11 +17,15 @@ body {
 }
 
 header {
+  height: 200px;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_GFmTm6jEaseDMDx4-L8bNE_4GKcxVdU1g&usqp=CAU');
+  background-size: cover;
   margin-top: 16px;
   margin-bottom: 48px;
 }
 
 h2 {
+padding-top: 20px;
   text-align: center;
   font-size: 64px;
   margin-bottom: 16px;
