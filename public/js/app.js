@@ -23,7 +23,7 @@ dateElement.textContent = new Date().getDate() + ", " + monthNames[new Date().ge
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
     
-    locationElement.textContent = "Loading...";
+    locationElement.textContent = "City not found...";
     tempElement.textContent = "";
     weatherCondition.textContent = "";
     const locationApi = fetchWeather + "?address=" + search.value;
@@ -38,7 +38,7 @@ weatherForm.addEventListener('submit', (event) => {
                 locationElement.textContent ='City: ' + data.cityName;
                 tempElement.textContent = (data.temperature - 273.5).toFixed(2) + String.fromCharCode(176) + 'C';
                 weatherCondition.textContent = 'Weather Condition: ' + data.description;
-                humidityElement.textContent = 'Humidity: ' + data.humidity;
+                // humidityElement.textContent = 'Humidity: ' + data.humidity;
                 weatherForm.reset();
             }
         }) 

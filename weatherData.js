@@ -6,15 +6,16 @@ const weatherData = (address, callback) => {
 
 // console.log(url)
 request({url,json:true},(error,{body})=>{
-    // console.log(body)
-    if(error){
-        callback(`Can't fetch the data`,undefined)
-    } else {
+    console.log("code",body.cod)
+    if(body.code === 404){
+      error(`Can't fetch the data`,undefined)
+   
+    } else if(body.cod !== '404') {
         callback(undefined, {
            temperature: body.main.temp,
            description: body.weather[0].description,
            cityName:body.name,
-           humidity:body.main.humidity
+        //    humidity:body.main.humidity
         })
     }
 })

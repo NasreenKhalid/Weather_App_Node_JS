@@ -34,25 +34,34 @@ app.get('/', (req,res)=>{
 app.get('/weather', (req,res) => {
     const address = req.query.address
 
-    if(!address){
+    if(address === '' ){
+
+        console.log("add",address)
         return res.send({
-            error: "Please enter a location to search weather"
+            error: "Please enter a valid location to search weather"
         })
-    }
-   weatherData(address,(error, {temperature, description,cityName,humidity}) => {
-       if(error){
-           return res.send({
-               error
-           })
-       } 
-       console.log(temperature,description,cityName,humidity)
-       res.send({
-           temperature,
-           description,
-           cityName,
-           humidity
-       })
-   })
+     }
+    // else if(address !== address){
+    //     return res.send({
+    //         error: "3342Please enter a location to search weather"
+    //     })
+    // }else {
+        weatherData(address,(error, {temperature, description,cityName,humidity}) => {
+            if(error){
+                return res.send({
+                    error
+                })
+            } 
+            console.log(temperature,description,cityName,humidity)
+            res.send({
+                temperature,
+                description,
+                cityName,
+                // humidity
+            })
+        })
+    // }
+   
 })
 
 // route if a page doesnot exist (404)
